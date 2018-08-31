@@ -34,7 +34,7 @@ server.get("/api/projects/:id/actions", (req,res) => {
     const id = req.params.id; 
     pModel.getProjectActions(id).then(projectActions => {
         if(projectActions){
-            res.status(200).json(project); 
+            res.status(200).json(projectActions); 
         }else{
             res.status(404).json({error: "The specified ID does not exist"})
         }
